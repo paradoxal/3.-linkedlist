@@ -70,12 +70,11 @@ class LinkedList:
     
     def _get_at(self, n): #private method
         """Return the node at position `n`."""
-        return   #fix this
     
     
     def addFirst(self, obj):
         """Add the object `obj` as the first element."""
-        newNode = ListNode(obj) #Why can't I use ListNode??
+        newNode = self.ListNode(obj) #Why can't I use ListNode??
         
         self.h.predessor = newNode
         newNode.follower = self.h
@@ -87,7 +86,7 @@ class LinkedList:
     
     def addLast(self, obj):
         """Add the object `obj` as the last element."""
-        
+        #i have no idea what i'm doing
         if self._get_at(0) == None:
             self.addFirst(obj)
         else:
