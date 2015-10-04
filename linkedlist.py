@@ -78,12 +78,11 @@ class LinkedList:
         newNode = self.ListNode(obj)
         
         if self.h == None: #AttributeError: 'LinkedList' object has no attribute 'h'
-
             print(list)
         else:
-            newNode.h.predecessor = newNode
-            newNode.follower = newNode.h
-            newNode.h = newNode
+            self.h.predecessor = newNode
+            newNode.follower = self.h
+            self.h = newNode
             
         self.size += 1
 
