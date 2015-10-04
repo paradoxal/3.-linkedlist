@@ -6,6 +6,7 @@
 :Author: amanda.ilkko@aalto.fi
 :Date: 01.10.2015
 """
+from unittest.test.testmock.testmock import Something
 
 class LinkedList:
     """
@@ -74,12 +75,16 @@ class LinkedList:
     
     def addFirst(self, obj):
         """Add the object `obj` as the first element."""
-        newNode = self.ListNode(obj) #Why can't I use ListNode??
+        newNode = self.ListNode(obj)
         
-        self.h.predessor = newNode
-        newNode.follower = self.h
-        self.h = newNode
-        
+        if self.h == None: #AttributeError: 'LinkedList' object has no attribute 'h'
+
+            print(list)
+        else:
+            newNode.h.predecessor = newNode
+            newNode.follower = newNode.h
+            newNode.h = newNode
+            
         self.size += 1
 
     
@@ -122,7 +127,6 @@ class LinkedList:
 
 # EOF
 MyList = LinkedList()
-MyList.addLast(20)
 print(MyList)
 MyList.addFirst(10)
 print(MyList)
